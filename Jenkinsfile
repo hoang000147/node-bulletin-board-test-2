@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                cd './bulletin-board-app'
+                //cd './bulletin-board-app'
                 sh 'npm install'
             }
         }
