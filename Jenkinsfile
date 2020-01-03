@@ -12,24 +12,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './bulletin-board-app/deployment.sh'
+                //sh './bulletin-board-app/deployment.sh'
                 dir("./bulletin-board-app") {
                     sh "pwd"
                     sh 'npm install'
-                    sh 'ls'
-                    sh './bulletin-board-app/deployment.sh'
+                    //sh 'ls'
+                    //sh './bulletin-board-app/deployment.sh'
                 }
                 //sh 'ls'
                 //sh 'npm install'
             }
         }
         
-        /*stage('Deploy') {
+        stage('Deploy') {
             steps {
-                dir ("./bulletin-board-app") {
-                    sh 'deployment.sh'
-                }        
+                echo 'chmod 777 ./bulletin-board-app/'
+                sh './bulletin-board-app/deployment.sh'  
             }
-        }*/
+        }
     }
 }
