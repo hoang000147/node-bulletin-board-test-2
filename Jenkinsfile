@@ -14,9 +14,11 @@ pipeline {
             steps {
                 dir("./bulletin-board-app") {
                     sh "pwd"
+                    sh 'ls'
+                    sh 'npm install'
                 }
-                sh 'ls'
-                sh 'npm install'
+                //sh 'ls'
+                //sh 'npm install'
             }
         }
         
