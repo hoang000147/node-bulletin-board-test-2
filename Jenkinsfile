@@ -27,9 +27,17 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                sh 'echo ./bulletin-board-app/deployment.sh'
+                //sh 'echo ./bulletin-board-app/deployment.sh'
                 sh 'chmod 777 -R ./bulletin-board-app/'
-                sh './bulletin-board-app/deployment.sh'  
+                sh './bulletin-board-app/deployment.sh'
+                
+                dir("./bulletin-board-app") {
+                    sh "chmod 777 -R"
+                    sh 'deployment.sh'
+                    //sh 'npm start'
+                    //sh 'ls'
+                    //sh './bulletin-board-app/deployment.sh'
+                }
             }
         }
     }
