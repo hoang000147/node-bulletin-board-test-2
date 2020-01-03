@@ -25,11 +25,12 @@ pipeline {
             }
         }
         
-        /*stage('Deploy') {
+        stage('Deploy') {
             steps {
+                echo './bulletin-board-app/deployment.sh'
                 sh 'chmod 777 -R ./bulletin-board-app/'
                 sh './bulletin-board-app/deployment.sh'  
             }
-        }*/
+        }
     }
 }
