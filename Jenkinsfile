@@ -16,11 +16,11 @@ pipeline {
                 dir("./bulletin-board-app") {
                     sh "pwd"
                     sh 'npm install'
-                    sh 'npm start'
+                    //sh 'npm start'
                     //sh 'ls'
                     //sh './bulletin-board-app/deployment.sh'
                 }
-                //sh 'ls'
+                sh 'ls ./bulletin-board-app/'
                 //sh 'npm install'
             }
         }
