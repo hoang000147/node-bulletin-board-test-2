@@ -1,3 +1,3 @@
-#!/usr/bin/env php
+#!/usr/bin/env sh
 
 npm start
