@@ -16,18 +16,19 @@ pipeline {
                     sh "pwd"
                     sh 'npm install'
                     sh 'ls'
+                    sh 'deployment.sh'
                 }
                 //sh 'ls'
                 //sh 'npm install'
             }
         }
         
-        stage('Deploy') {
+        /*stage('Deploy') {
             steps {
                 dir ("./bulletin-board-app") {
                     sh 'deployment.sh'
                 }        
             }
-        }
+        }*/
     }
 }
