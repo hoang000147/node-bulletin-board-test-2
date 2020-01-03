@@ -1,7 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'node:6-alpine'
+            image 'node:6.11.5'
             args '-p 30005:8080'
         }
     }
@@ -12,6 +12,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh './bulletin-board-app/deployment.sh'
                 dir("./bulletin-board-app") {
                     sh "pwd"
                     sh 'npm install'
