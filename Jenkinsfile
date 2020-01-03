@@ -33,8 +33,8 @@ pipeline {
                 
                 dir("./bulletin-board-app") {
                     sh 'ls'
-                    sh 'chmod 777 -R ./bulletin-board-app/'
-                    sh './bulletin-board-app/deployment.sh'
+                    sh 'chmod 777 -R .'
+                    sh './deployment.sh'
                 }
             }
         }
