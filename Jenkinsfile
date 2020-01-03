@@ -1,5 +1,4 @@
 pipeline {
-    //{dockerfile true}
     agent {
         docker {
             image 'node:6-alpine'
@@ -7,9 +6,9 @@ pipeline {
         }
     }
     
-    /*environment {
+    environment {
         CI = 'true'
-    }*/
+    }
     stages {
         stage('Build') {
             steps {
