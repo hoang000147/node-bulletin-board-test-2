@@ -16,7 +16,7 @@ pipeline {
                     sh "pwd"
                     sh 'npm install'
                     sh 'ls'
-                    sh 'deployment.sh'
+                    sh './bulletin-board-app/deployment.sh'
                 }
                 //sh 'ls'
                 //sh 'npm install'
