@@ -26,7 +26,7 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                echo 'chmod 777 -R ./bulletin-board-app/'
+                sh 'chmod 777 -R ./bulletin-board-app/'
                 sh './bulletin-board-app/deployment.sh'  
             }
         }
