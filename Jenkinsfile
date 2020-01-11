@@ -23,9 +23,10 @@ pipeline {
             steps {                
                 dir("./bulletin-board-app") {
                     sh 'chmod 777 -R .'
-                    sh './deployment.sh'
-                    input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                    sh './kill.sh'
+                    sh 'npm start'
+                    //sh './deployment.sh'
+                    //input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                    //sh './kill.sh'
                 }
             }
         }
