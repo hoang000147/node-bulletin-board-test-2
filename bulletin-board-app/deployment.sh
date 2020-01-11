@@ -1,3 +1,7 @@
 #!/usr/bin/env sh
 
-npm start
+set -x
+npm start &
+sleep 1
+echo $! > .pidfile
+set +x
