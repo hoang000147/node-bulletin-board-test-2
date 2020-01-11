@@ -25,8 +25,8 @@ pipeline {
                     sh 'chmod 777 -R .'
                     //sh 'npm start'
                     sh './deployment.sh'
-                    //input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                    //sh './kill.sh'
+                    input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                    sh './kill.sh'
                 }
             }
         }
