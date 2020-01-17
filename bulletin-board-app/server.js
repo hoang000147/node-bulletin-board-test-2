@@ -34,5 +34,5 @@ app.get('/api/events', api.events);
 app.post('/api/events', api.event);
 app.delete('/api/events/:eventId', api.event);
 
-app.listen(8075);
-console.log('Magic happens on port 8075...');
+app.listen(5000);
+console.log('Magic happens on port 5000...');
