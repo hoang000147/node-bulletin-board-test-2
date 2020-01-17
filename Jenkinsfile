@@ -42,7 +42,9 @@ pipeline {
     stages{
         stage('Build Docker Image'){
             steps{
-                sh "docker build . -t hoang000147/bulletinboard:${DOCKER_TAG} "
+                dir ("./bulletin-board-app") {
+                    sh "docker build . -t hoang000147/bulletinboard:${DOCKER_TAG} "
+                }
             }
         }
         stage('DockerHub Push'){
