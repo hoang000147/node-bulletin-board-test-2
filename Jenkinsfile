@@ -58,6 +58,7 @@ pipeline {
                 sh "chmod -R 777 changeTag.sh"
                 sh "./changeTag.sh ${DOCKER_TAG}"
                 sshagent(['vcntt']) {
+                    sh "chmod 777 -R /home/vcntt/bulletin-board/*"
                     sh "scp -o StrictHostKeyChecking=no bulletinboarddeploy.yaml vcntt@112.137.141.18:/home/vcntt/bulletin-board/"
                     script{
                         try{
