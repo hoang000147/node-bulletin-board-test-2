@@ -53,22 +53,22 @@ pipeline {
                // }
             }
         }
-        /*stage('Deploy to k8s'){
+        stage('Deploy to k8s'){
             steps{
                 sh "chmod -R 777 changeTag.sh"
                 sh "./changeTag.sh ${DOCKER_TAG}"
-                sshagent(['kops-machine']) {
-                    sh "scp -o StrictHostKeyChecking=no services.yml node-app-pod.yml ec2-user@52.66.70.61:/home/ec2-user/"
+                sshagent(['vcntt']) {
+                    sh "scp -o StrictHostKeyChecking=no bulletinboarddeploy.yaml vcntt@112.137.141.18:/bulletin-board/"
                     script{
                         try{
-                            sh "ssh ec2-user@52.66.70.61 kubectl apply -f ."
+                            sh "ssh vcntt@112.137.141.18 kubectl apply -f ."
                         }catch(error){
-                            sh "ssh ec2-user@52.66.70.61 kubectl create -f ."
+                            sh "ssh vcntt@112.137.141.18 kubectl create -f ."
                         }
                     }
                 }
             }
-        }*/
+        }
     }
 }
 
