@@ -57,8 +57,8 @@ pipeline {
             steps{
                 sh "chmod -R 777 changeTag.sh"
                 sh "./changeTag.sh ${DOCKER_TAG}"
-                sshagent(['vcntt']) {
-                    sh "scp -o StrictHostKeyChecking=no bulletinboarddeploy.yaml vcntt@112.137.141.18:/bulletin-board/"
+                sshagent(['e34aa8be-d579-440e-95e8-306cb61ecf2a']) {
+                    sh "scp -o StrictHostKeyChecking=no bulletinboarddeploy.yaml vcntt@112.137.141.18:/home/vcntt/bulletin-board/"
                     script{
                         try{
                             sh "ssh vcntt@112.137.141.18 kubectl apply -f ."
