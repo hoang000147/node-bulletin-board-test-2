@@ -62,9 +62,9 @@ pipeline {
                     sh "scp -o StrictHostKeyChecking=no bulletinboarddeploy.yaml vcntt@112.137.141.18:~/bulletin-board/"
                     script{
                         try{
-                            sh "ssh vcntt@112.137.141.18 kubectl apply -f bulletinboarddeploy.yaml"
+                            sh "ssh vcntt@112.137.141.18 kubectl apply -f ~/bulletin-board/bulletinboarddeploy.yaml"
                         }catch(error){
-                            sh "ssh vcntt@112.137.141.18 kubectl create -f bulletinboarddeploy.yaml"
+                            sh "ssh vcntt@112.137.141.18 kubectl create -f ~/bulletin-board/bulletinboarddeploy.yaml"
                         }
                     }
                 }
