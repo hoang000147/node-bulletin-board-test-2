@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bulletin-board-demo
+  namespace: bulletin-board-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      bb: web
+  template:
+    metadata:
+      labels:
+        bb: web
+    spec:
+      containers:
+      - name: bulletin-board-site
+        image: hoang000147/bulletinboard:tagVersion
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: bulletin-board-entrypoint
+  namespace: bulletin-board-test
+spec:
+  type: NodePort
+  selector:
+    bb: web
+  ports:
+  - port: 5000
+    targetPort: 5000
+    nodePort: 30015
